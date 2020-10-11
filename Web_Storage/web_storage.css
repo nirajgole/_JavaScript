@@ -1,0 +1,77 @@
+section {
+  display: flex;
+  justify-content:center;
+  margin: 40px;
+  flex-wrap: wrap;
+}
+
+#local_storage {
+  flex: content;
+  flex-direction: column;
+  align-items: center;
+  background-color: antiquewhite;
+  border-radius: 20px;
+  padding: 30px;
+  margin: auto;
+}
+
+#session_storage {
+  flex: content;
+  flex-direction: column;
+  align-items: center;
+  background-color:antiquewhite;
+  border-radius: 20px;
+  padding: 30px;
+  margin: auto;
+}
+
+span {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+}
+
+#ls_table{
+    border: 20px;
+    border-color: black;
+    border-spacing: 30px;
+}
+
+#ss_table{
+    border: 20px;
+    border-color: black;
+    border-spacing: 30px;
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    background-color: burlywood;
+    padding: 10px;
+    color:black;
+}
+
+form{
+    background-color: bisque;
+    display: flex;
+    border-radius: 20px;
+    padding: 10px;
+    margin: auto;
+    justify-content: center;
+    width: 30%;
+    flex-wrap: wrap;
+}
+
+#key_{
+    flex: content;
+    padding: 10px;
+}
+#value_{
+    flex: content;
+    padding: 10px;
+}
+input{
+    border-radius: 20px;
+    text-align: center;
+    height: 30px;
+}
