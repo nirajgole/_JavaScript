@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation using Jquery</title>
+    
+    <!-- adding scripts -->
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/Jquery-Form_Validation/chosen/chosen.jquery.min.js"></script>
+    <script src="./valid.js"></script>
+
+    <!-- adding stylesheets -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/Jquery-Form_Validation/chosen/chosen.min.css">
+    <link rel="stylesheet" href="./valid.css">
+
+</head>
+<body>
+    <form id="myForm" action="./success.html" method="GET" autocomplete="on">
+        <fieldset>
+            <legend>Login Details</legend>
+            <p>
+                <label for="username">Username: </label>
+                <input type="text" name="username" id="username">
+            </p>
+            <p>
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password">
+            </p>
+            <p>
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email">
+            </p>
+            <p>
+                <label for="skills">Skill: </label>
+                <input id="skills" name="skills">
+            </p>
+            <p>
+                <label for="city">City: </label>
+                <select class="city-select" data-placeholder="Choose a country..." style="width:125px;">
+                    <option value=""></option>
+                    <option value="1">Pune</option>
+                    <option value="2">Nashik</option>
+                    <option value="3">Ratnagiri</option>
+                    <option value="4">Thane</option>
+                    <option value="5">Nagpur</option>
+                  </select>
+            </p>
+            <p>
+                <input type="submit" value="Submit" class="submit">
+            </p>
+        </fieldset>
+    </form>
+  
+</body>
+</html>
