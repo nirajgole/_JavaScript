@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "userID": "123",
+      "name": "Abc Xyz"
+    }
+  ],
+  "blogs": [
+    {
+      "blogID": "B1",
+      "userID": "123",
+      "categoryID": "C1",
+      "content": "Something text"
+    }
+  ],
+  "Catagories": [
+    {
+      "categoryID": "C1",
+      "category": "Food"
+    }
+  ],
+  "comments": [
+    {
+      "emailID": "abc@xyz.com",
+      "comment": "Something text",
+      "blogID": "B1"
+    }
+  ]
+}
