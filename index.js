@@ -5,15 +5,18 @@ const search = document.querySelector('.search');
 const timeDisplay = document.querySelector('.time');
 const taskCount = document.querySelector('.task-no');
 
-if (window.sessionStorage.getItem('toDos') === undefined) {
-  window.sessionStorage.setItem('toDos', JSON.stringify(toDos));
+if (window.localStorage.getItem('toDos') === null) {
+  const toDos = [];
+  window.localStorage.setItem('toDos', JSON.stringify(toDos));
 }
 
-const toDosEX = window.sessionStorage.getItem('toDos');
+const toDosEX = window.localStorage.getItem('toDos');
 const toDos = JSON.parse(toDosEX);
+
 const countTasks = () => {
   taskCount.innerHTML = String(toDos.length);
 };
+
 const updateTime = () => {
   const formatDate = {
     day: '2-digit',
@@ -74,7 +77,7 @@ const edit = (itemBox, input, name) => {
     input.disabled = !input.disabled;
     const indexOf = toDos.indexOf(name);
     toDos[indexOf] = input.value;
-    window.sessionStorage.setItem('toDos', JSON.stringify(toDos));
+    window.localStorage.setItem('toDos', JSON.stringify(toDos));
     updateTime();
   }
 };
@@ -83,7 +86,7 @@ const remove = (itemBox, name) => {
   itemBox.parentNode.removeChild(itemBox);
   const index = toDos.indexOf(name);
   toDos.splice(index, 1);
-  window.sessionStorage.setItem('toDos', JSON.stringify(toDos));
+  window.localStorage.setItem('toDos', JSON.stringify(toDos));
   updateTime();
   countTasks();
 };
@@ -100,7 +103,7 @@ const check = () => {
   if (inputValue.value !== '') {
     createItem(inputValue.value);
     toDos.push(inputValue.value);
-    window.sessionStorage.setItem('toDos', JSON.stringify(toDos));
+    window.localStorage.setItem('toDos', JSON.stringify(toDos));
     inputValue.value = '';
   }
 };
@@ -126,6 +129,9 @@ const searchItem = () => {
 search.addEventListener('click', searchItem);
 
 const displayList = () => {
+  if (toDos === null) {
+    createItem('Buy Milk');
+  }
   for (const toDo of toDos) {
     createItem(toDo);
   }
