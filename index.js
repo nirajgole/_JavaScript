@@ -5,11 +5,11 @@ const search = document.querySelector('.search');
 const timeDisplay = document.querySelector('.time');
 const taskCount = document.querySelector('.task-no');
 
-if (window.localStorage.getItem('toDos') === undefined) {
-  window.localStorage.setItem('toDos', JSON.stringify(toDos));
+if (window.sessionStorage.getItem('toDos') === undefined) {
+  window.sessionStorage.setItem('toDos', JSON.stringify(toDos));
 }
 
-const toDosEX = window.localStorage.getItem('toDos');
+const toDosEX = window.sessionStorage.getItem('toDos');
 const toDos = JSON.parse(toDosEX);
 const countTasks = () => {
   taskCount.innerHTML = String(toDos.length);
@@ -74,7 +74,7 @@ const edit = (itemBox, input, name) => {
     input.disabled = !input.disabled;
     const indexOf = toDos.indexOf(name);
     toDos[indexOf] = input.value;
-    window.localStorage.setItem('toDos', JSON.stringify(toDos));
+    window.sessionStorage.setItem('toDos', JSON.stringify(toDos));
     updateTime();
   }
 };
@@ -83,7 +83,7 @@ const remove = (itemBox, name) => {
   itemBox.parentNode.removeChild(itemBox);
   const index = toDos.indexOf(name);
   toDos.splice(index, 1);
-  window.localStorage.setItem('toDos', JSON.stringify(toDos));
+  window.sessionStorage.setItem('toDos', JSON.stringify(toDos));
   updateTime();
   countTasks();
 };
@@ -100,7 +100,7 @@ const check = () => {
   if (inputValue.value !== '') {
     createItem(inputValue.value);
     toDos.push(inputValue.value);
-    window.localStorage.setItem('toDos', JSON.stringify(toDos));
+    window.sessionStorage.setItem('toDos', JSON.stringify(toDos));
     inputValue.value = '';
   }
 };
