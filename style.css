@@ -127,11 +127,14 @@ h1 {
 .locale,
 .task,
 .task-no {
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   color: #faebd7;
-  place-items: center;
   font-family: var(--fontType);
   font-size: var(--fontSize);
+  padding-left: 1rem;
 }
 
 .completed {
