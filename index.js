@@ -5,13 +5,15 @@ const search = document.querySelector('.search');
 const timeDisplay = document.querySelector('.time');
 const taskCount = document.querySelector('.task-no');
 
-if (window.localStorage.getItem('toDos') === null) {
-  const toDos = [];
-  window.localStorage.setItem('toDos', JSON.stringify(toDos));
-}
+let toDos;
 
 const toDosEX = window.localStorage.getItem('toDos');
-const toDos = JSON.parse(toDosEX);
+if (toDosEX === null || toDosEX === undefined) {
+  toDos = [];
+  window.localStorage.setItem('toDos', JSON.stringify(toDos));
+} else {
+  toDos = JSON.parse(toDosEX);
+}
 
 const countTasks = () => {
   taskCount.innerHTML = String(toDos.length);
@@ -101,8 +103,9 @@ const markAsDone = (itemBox, input, name) => {
 
 const check = () => {
   if (inputValue.value !== '') {
+    const itemObj = { value: inputValue.value, completed: false };
     createItem(inputValue.value);
-    toDos.push(inputValue.value);
+    toDos.push(itemObj);
     window.localStorage.setItem('toDos', JSON.stringify(toDos));
     inputValue.value = '';
   }
@@ -120,9 +123,9 @@ const searchItem = () => {
   container.innerHTML = '';
   const keyWord = inputValue.value;
   const regex = new RegExp(keyWord, 'gi');
-  const arr = toDos.filter(item => String(item).match(regex));
+  const arr = toDos.filter(item => String(item.value).match(regex));
   for (const toDo of arr) {
-    createItem(toDo);
+    createItem(toDo.value);
   }
 };
 
@@ -133,7 +136,7 @@ const displayList = () => {
     createItem('Buy Milk');
   }
   for (const toDo of toDos) {
-    createItem(toDo);
+    createItem(toDo.value);
   }
 };
 displayList();
