@@ -1,0 +1,17 @@
+{
+  "response": [
+    {
+      "message": "This is default system generated file. Please add your JSON file to database folder."
+    },
+    {
+      "id": 101,
+      "firstName": "Test",
+      "lastName": "Test"
+    },
+    {
+      "id": 101,
+      "firstName": "Test",
+      "lastName": "Test"
+    }
+  ]
+}
