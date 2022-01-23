@@ -82,5 +82,3 @@ async function askQuestions() {
   rl.close();
 }
 askQuestions();
-
-//GetPublishedAdPackage
