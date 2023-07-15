@@ -1,21 +1,20 @@
 import express from 'express'
-// import { graphqlHTTP } from 'graphql-http'
-// import schema from './schema'
-const app = express()
+import { createHandler } from 'graphql-http/lib/use/express'
 
-app.get('/', (req, res) => {
-  res.send('Graphql is amazing.')
+import resolvers from './data/resolver'
+import schema from './data/schema'
+
+// The root provides a resolver function for each API endpoint
+const root = resolvers
+
+const app = express()
+// !graphql-http does not support interactive graphql playground
+const handler = createHandler({
+  schema,
+  rootValue: root
 })
 
-// const root = { hello: () => "Hi, I'm Manny" }
-// app.use(
-//   '/graphql',
-//   graphqlHTTP({
-//     schema: schema,
-//     rootValue: root
-//   })
-// )
+app.use('/', handler)
 
-app.listen(8080, () =>
-  console.log('Running server on port localhost:8080/graphql')
-)
+app.listen({ port: 4000 })
+console.log('Running a GraphQL API server at http://localhost:4000/')
