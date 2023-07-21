@@ -9,6 +9,7 @@ const root = resolvers
 
 const app = express()
 // !graphql-http does not support interactive graphql playground
+//tested on google-chrome "Altair GraphQL Client" plugin
 const handler = createHandler({
   schema,
   rootValue: root

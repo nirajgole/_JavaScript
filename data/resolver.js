@@ -3,13 +3,23 @@ import { Widgets } from './dbConnectors'
 const resolvers = {
   // get product
   getProduct: async ({ id }) => {
-    const data = await Widgets.findById({ _id: id })
+    let data = null
+    await Widgets.findById({ _id: id })
       .then(result => {
         console.info(result.data)
-        return result
+        data = result
       })
-      .catch(err => console.error(err))
+      .catch(err => (data = err))
+    return data
+  },
 
+  // get all products
+
+  getAllProducts: async () => {
+    let data = null
+    await Widgets.find({})
+      .then(res => (data = res))
+      .catch(err => (data = err))
     return data
   },
 
@@ -25,14 +35,34 @@ const resolvers = {
     })
     newWidget.id = newWidget._id
 
-    const data = await newWidget
+    let data = null
+    await newWidget
       .save()
       .then(res => {
         console.info(`saved ${res}`)
-        return res
+        data = res
       })
-      .catch(err => console.error(err))
+      .catch(err => (data = err))
+    return data
+  },
 
+  updateProduct: async ({ input }) => {
+    let data = null
+    await Widgets.findOneAndUpdate({ _id: input.id }, input, {
+      new: true
+    })
+      .then(result => {
+        data = result
+      })
+      .catch(err => (data = err))
+    return data
+  },
+
+  deleteProduct: async ({ id }) => {
+    let data = null
+    await Widgets.deleteOne({ _id: id })
+      .then(_ => (data = 'Successfully deleted widget.'))
+      .catch(err => (data = err))
     return data
   }
 }
