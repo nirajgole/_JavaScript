@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Area and Perimeter using OOJ Concepts</title>
+</head>
+<body>
+    <div>
+        <p id="welcome"></p>
+        <label id="minutes">00</label>:<label id="seconds">00</label>
+    </div>
+    <form name="regForm" action="/Form_Validation/success.html" onsubmit="return validateForm()" method="get">
+    <table>
+        <tr>
+            <th>First Name: </th>
+            <td><input type="text" name="fname" required validate></td>
+        </tr>
+        <tr>
+            <th>Last Name: </th>
+            <td><input type="text" name="lname" required></td>
+        </tr>
+        <tr>
+            <th>Date of Birth: </th>
+            <td><input type="text" name="date" max="10"></td>
+        </tr>
+        <tr>
+            <th>Email Address: </th>
+            <td><input type="text" name="email" required></td>
+        </tr>
+        <tr>
+            <th>Hobby: </th>
+            <td><input type="checkbox" name="hobby" value="reading" onchange="showWriter(this)">Reading<br>
+            <input type="checkbox" name="hobby" value="Watching_movies">Watching Movies<br>
+                <input type="checkbox" name="hobby" value="photography">Photography
+        </td>
+        </tr>
+        <tr id="favWrite">
+            <th>Favorite Writer: </th>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="SUBMIT"></td>
+            <td><input type="reset" value="RESET"></td>
+        </tr>
+    </table>
+</form>
+    <script src="/Form_Validation/form_valid.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  
+"/api/v1/users/:appId/preferences": "/preferences/:appId",
+"http://localhost:3000/users/userId":""
+}

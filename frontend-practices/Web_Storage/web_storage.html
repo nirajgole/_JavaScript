@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Storage</title>
+    <link rel="stylesheet" href="web_storage.css">
+    
+</head>
+<body>
+    <span>*Your Browser Supports Both Local And Session Storage</span>
+
+    <form action="#">
+        <div id="key_">
+        <label for="enter_key">Key: </label>
+        <input type="text" id="key" placeholder="enter key ex. 123 or abc">
+    </div>
+    <div id="value_">
+        <label for="value">Value: </label>
+        <input type="text" id="val" placeholder="enter value ex. 123 or abc">
+    </div>
+    <button id="set_key">Set Key</button>
+    </form>
+
+    <section>
+    <div id="local_storage">
+        <span>Local Storage</span>
+        <table id="ls_table">
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+                <th>Action</th>
+            </tr>
+        </table>
+        <button id="showLS" onclick="showData()">Display Local Storage</button>
+        <button id="clear_storage" onclick="clearLS()">Clear Storage</button>
+    </div>
+
+    <div id="session_storage">
+        <span>Session Storage</span>
+        <table id="ss_table">
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+                <th>Action</th>
+            </tr>
+        </table>
+        <button onclick="showSessionData()">Show Session Data</button>
+    </div>
+</section>
+    <script src="web_storage.js"></script>
+</body>
+</html>

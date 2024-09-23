@@ -1,0 +1,20 @@
+header{
+    background-color: bisque;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+}
+table{
+    border-spacing: 20px;
+    border-style: solid;
+    border-color: brown;
+    background-color: antiquewhite;
+}
+tr>td{
+    text-align: right;
+}
+button{
+   width: 25rem;
+   padding: 5px;
+   font-size: medium;
+}
