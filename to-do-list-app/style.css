@@ -1,0 +1,142 @@
+:root {
+  --red: #df7861;
+  --green: #90ee90;
+  --blue: #87cefa;
+  --fontType: 'Hind', sans-serif;
+  --fontSize: 1.4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  background-color: #364547;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 50;
+  text-align: center;
+  margin: 1rem 0 3rem;
+  font-family: 'Hind', sans-serif;
+}
+
+.title {
+  color: var(--green);
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.inputDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  height: 50px;
+  border-radius: 25px;
+  width: auto;
+  margin: 0.25rem;
+  transition: 0.5s;
+  font-size: 1.15rem;
+}
+
+.add,
+.search {
+  outline: none;
+  border: none;
+  height: 50px;
+  border-radius: 25px;
+  width: 50px;
+
+  color: rgb(37, 36, 36);
+  font-size: medium;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 0.25rem;
+}
+
+.add {
+  background-color: var(--green);
+}
+.search {
+  background-color: var(--blue);
+}
+.add:hover,
+.search:hover {
+  opacity: 0.7;
+  background-color: #faebd7;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  grid-auto-flow: row;
+  margin-top: 2rem;
+}
+
+.item {
+  padding: 0.5rem;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 1.5rem;
+}
+
+.item_input {
+  background: none;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: var(--fontSize);
+  width: auto;
+}
+
+.edit,
+.remove,
+.done {
+  background: none;
+  outline: none;
+  border: none;
+  font-size: var(--fontSize);
+  font-family: var(--fontType);
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.edit {
+  color: var(--blue);
+}
+.remove {
+  color: var(--red);
+}
+
+.done {
+  color: var(--green);
+}
+
+.time,
+.locale,
+.task,
+.task-no {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #faebd7;
+  font-family: var(--fontType);
+  font-size: var(--fontSize);
+  padding-left: 1rem;
+}
+
+.completed {
+  text-decoration: line-through;
+}
