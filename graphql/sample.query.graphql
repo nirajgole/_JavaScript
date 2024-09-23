@@ -1,0 +1,57 @@
+//
+mutation{
+  updateProduct(input:{
+    id:"64b2582f78ef2fd13f6bb612",
+    name:"turkey",
+    description:"meat",
+    price:300,
+    soldOut:true,
+    stores:[{store:"m-mart"},{store:"target"}]
+  }){
+    name
+  }
+}
+
+//create new product with mutation
+mutation{
+  createProduct(input:{
+    name:"turkey",
+    description:"meat",
+    price:300,
+    soldOut:true,
+    stores:[{store:"m-mart"},{store:"target"}]
+  }){
+    name
+  }
+}
+
+//delete one
+mutation{
+  deleteProduct(id:"64ba1e8ee83b9b4d8256de33")
+}
+
+//get one by id
+query{
+  getProduct(id:"64b2582f78ef2fd13f6bb612"){
+    name,
+    description
+  }
+}
+//get all items
+query{
+  getAllProducts{
+    name
+  }
+}
+
+//alias
+query{
+  price: getProduct(id:"64b2582f78ef2fd13f6bb612"){
+  name,
+  price
+  },
+  description:getProduct(id:"64b2582f78ef2fd13f6bb612"){
+  name,
+  description
+  },
+}
